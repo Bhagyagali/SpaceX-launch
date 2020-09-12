@@ -36612,32 +36612,44 @@ var dispatchVoteAction = function dispatchVoteAction(id) {
 /*!********************************!*\
   !*** ./service/pageService.js ***!
   \********************************/
-/*! exports provided: dispatchFilterAction */
+/*! exports provided: dispatchNextPage, dispatchPrevPage, dispatchFilterAction */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dispatchNextPage", function() { return dispatchNextPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dispatchPrevPage", function() { return dispatchPrevPage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dispatchFilterAction", function() { return dispatchFilterAction; });
 /* harmony import */ var _store_actions_pageAction__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../store/actions/pageAction */ "./store/actions/pageAction.js");
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./api */ "./service/api.js");
 
- // /**
-//  *
-//  * @param page
-//  * @returns {function(*): Promise<unknown>}
-//  */
-// export const dispatchNextPage = ( page) => ( dispatch ) => {
-//     return fetchFeeds(page ).then( res => dispatch( nextPage( res ) ) ) ;
-// }
-// /**
-//  *
-//  * @param page
-//  * @returns {function(*): Promise<unknown>}
-//  */
-// export const dispatchPrevPage = ( page) => ( dispatch ) => {
-//     return fetchFeeds(page ).then( res => dispatch( prevPage( res ) ) ) ;
-// }
 
+/**
+ *
+ * @param page
+ * @returns {function(*): Promise<unknown>}
+ */
+
+var dispatchNextPage = function dispatchNextPage(page) {
+  return function (dispatch) {
+    return Object(_api__WEBPACK_IMPORTED_MODULE_1__["fetchFeeds"])(page).then(function (res) {
+      return dispatch(Object(_store_actions_pageAction__WEBPACK_IMPORTED_MODULE_0__["nextPage"])(res));
+    });
+  };
+};
+/**
+ *
+ * @param page
+ * @returns {function(*): Promise<unknown>}
+ */
+
+var dispatchPrevPage = function dispatchPrevPage(page) {
+  return function (dispatch) {
+    return Object(_api__WEBPACK_IMPORTED_MODULE_1__["fetchFeeds"])(page).then(function (res) {
+      return dispatch(Object(_store_actions_pageAction__WEBPACK_IMPORTED_MODULE_0__["prevPage"])(res));
+    });
+  };
+};
 /**
  *
  * @param filterURL
@@ -36658,7 +36670,7 @@ var dispatchFilterAction = function dispatchFilterAction(filterURL) {
 /*!******************************************!*\
   !*** ./store/actions/action.constant.js ***!
   \******************************************/
-/*! exports provided: INITIALIZE_SESSION, STORE_DATA, HIDE_DATA, UP_VOTES, FILTER_ACTION */
+/*! exports provided: INITIALIZE_SESSION, STORE_DATA, HIDE_DATA, NEXT_PAGE, PREV_PAGE, UP_VOTES, FILTER_ACTION */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -36666,13 +36678,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INITIALIZE_SESSION", function() { return INITIALIZE_SESSION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STORE_DATA", function() { return STORE_DATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HIDE_DATA", function() { return HIDE_DATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NEXT_PAGE", function() { return NEXT_PAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PREV_PAGE", function() { return PREV_PAGE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UP_VOTES", function() { return UP_VOTES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FILTER_ACTION", function() { return FILTER_ACTION; });
 var INITIALIZE_SESSION = 'INITIALIZE_SESSION';
 var STORE_DATA = "PAGINATION_STORE_DATA";
-var HIDE_DATA = 'HIDE_DATA'; // export const NEXT_PAGE = 'NEXT_PAGE';
-// export const PREV_PAGE = 'PREV_PAGE';
-
+var HIDE_DATA = 'HIDE_DATA';
+var NEXT_PAGE = 'NEXT_PAGE';
+var PREV_PAGE = 'PREV_PAGE';
 var UP_VOTES = 'UP_VOTES';
 var FILTER_ACTION = 'FILTER_ACTION';
 
@@ -36723,23 +36737,29 @@ var increaseVoteCount = function increaseVoteCount(id) {
 /*!*************************************!*\
   !*** ./store/actions/pageAction.js ***!
   \*************************************/
-/*! exports provided: filterAction, storeData */
+/*! exports provided: nextPage, prevPage, filterAction, storeData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nextPage", function() { return nextPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "prevPage", function() { return prevPage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterAction", function() { return filterAction; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "storeData", function() { return storeData; });
 /* harmony import */ var _action_constant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./action.constant */ "./store/actions/action.constant.js");
- // export const nextPage = ( data ) => ( {
-//     type: NEXT_PAGE,
-//     data,
-// } );
-// export const prevPage = ( data ) => ( {
-//     type: PREV_PAGE,
-//     data,
-// } );
 
+var nextPage = function nextPage(data) {
+  return {
+    type: _action_constant__WEBPACK_IMPORTED_MODULE_0__["NEXT_PAGE"],
+    data: data
+  };
+};
+var prevPage = function prevPage(data) {
+  return {
+    type: _action_constant__WEBPACK_IMPORTED_MODULE_0__["PREV_PAGE"],
+    data: data
+  };
+};
 var filterAction = function filterAction(data) {
   return {
     type: _action_constant__WEBPACK_IMPORTED_MODULE_0__["FILTER_ACTION"],
