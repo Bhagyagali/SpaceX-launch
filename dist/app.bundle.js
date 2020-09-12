@@ -36343,7 +36343,7 @@ var Home = /*#__PURE__*/function (_React$Component) {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Home, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      if (this.props.feeds.length <= 0) {// this.props.fetchData( );
+      if (this.props.feeds.length <= 0) {// this.props.fetchData( ); 
       }
     }
   }, {
