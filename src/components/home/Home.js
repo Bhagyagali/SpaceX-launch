@@ -9,7 +9,7 @@ import "./Home.scss";
 class Home extends React.Component{
     componentDidMount( ) {
         if ( this.props.feeds.length <= 0 ) {
-            // this.props.fetchData( );
+            // this.props.fetchData( ); 
         }
     }
 
