@@ -12,7 +12,7 @@ Run dev mode with
 ```npm start``` or ```yarn start```
 
 Live Url
-```https://xtcoding.herokuapp.com/```
+```https://space-x-launch-xt.herokuapp.com/```
 
 Now open the browser and navigate to `http://localhost:8080` and you get your server rendered React app. You can inspect the page source and see that the html coming from your local server has all the nodes defined in the React app.
 
