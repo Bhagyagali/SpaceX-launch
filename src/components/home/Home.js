@@ -15,6 +15,7 @@ class Home extends React.Component{
 
     render() {
         const { feeds } = this.props;
+        // console.log(feeds);
         return(
             <div id="page">
                 <div className="home-cont px-4">

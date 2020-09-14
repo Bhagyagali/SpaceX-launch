@@ -6,14 +6,14 @@ const MissionCards = (props) =>{
             <div className="spacex-main">
                 {
                     props.missionData && props.missionData.map((val,idx)=>{
-                        return <div className="spacex-card mr-4 p-3" key={idx}>
+                        return <div className="spacex-card p-3" key={idx}>
                                     <img src={val && val.links && val.links.mission_patch} alt="Image"></img>
                                     <div className="card-inner">
                                         <div className="mission-name pt-1">
                                             <span>{val.mission_name}  </span>
                                             <span>  #{val.flight_number}</span>
                                         </div>
-                                        <div className="mission-ids pt-3 pb-1">
+                                        <div className="mission-ids pt-1 pb-1">
                                             <span className="mission-label">Mission Ids:</span>
                                             <ul className="mission-data">
                                                 {

@@ -55,13 +55,14 @@
         .spacex-card{
             width: 22.5%;
             margin-bottom: 1rem;
+            margin-right:1.5rem !important;
             display: block;
             float: left;
             background-color: #FFF;
             height: 475px;
             img{
                 width: 100%;
-                height: auto;
+                height: 200px;
                 display: block;
                 margin: auto;
                 background-color: #f2f2f2;
@@ -82,6 +83,7 @@
                     color:#a7a8b5;
                     font-size: 14px;
                     margin-left:5px;
+                    margin-bottom: 0px!important;
                 }
             }
         }
@@ -108,7 +110,8 @@
             margin-left:0;
             margin-top: 15px;
             .spacex-card{
-                width:100%;
+                width:55%;
+                //height:200px;
                 // img{
                 //     width: 88%;
                 //     height: 88%;
@@ -130,21 +133,70 @@
         .filter-main{
             .sub-filter{
                 .years-main{
-                    padding-left: 1rem!important;
-                    padding-right: 1rem!important;
+                    padding-left: 0.5rem!important;
+                    padding-right: 0rem!important;
                 }
             }
         }
         .spacex-main{
             margin-left:0;
             .spacex-card{
-                width:46%;
+                width:45%;
                 margin-bottom: 1.5rem !important;
                 img{
-                    width: 81%;
+                    width: 81%!important;
+                    height:200px;
                 }
                 .card-inner{
                     padding: 25px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width : 1025px) and (max-width : 1224px) {
+    .home-cont{
+        .filter-main{
+            .sub-filter{
+                .years-main{
+                    padding-left: 0.6rem!important;
+                    padding-right: 0rem!important;
+                }
+            }
+        }
+        .spacex-main{
+            margin-left:0;
+            .spacex-card{
+                width:24%;
+                margin-bottom: 1.5rem !important;
+                margin-right:0.5rem !important;
+                img{
+                    width: 100%!important;
+                    height:200px;
+                }
+                .card-inner{
+                    padding: 5px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width : 1800px) and (max-width : 2800px) {
+    .home-cont{
+        .spacex-main{
+            margin-left:0;
+            .spacex-card{
+                width:24%;
+                margin-bottom: 1.5rem !important;
+                margin-right:0.5rem !important;
+                img{
+                    width: 100%!important;
+                    height:250px;
+                }
+                .card-inner{
+                    padding-left: 20px;
+                    padding-right: 20px;
                 }
             }
         }

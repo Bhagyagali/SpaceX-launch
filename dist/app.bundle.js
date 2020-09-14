@@ -36349,7 +36349,8 @@ var Home = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var feeds = this.props.feeds;
+      var feeds = this.props.feeds; // console.log(feeds);
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         id: "page"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -36423,7 +36424,7 @@ var MissionCards = function MissionCards(props) {
     className: "spacex-main"
   }, props.missionData && props.missionData.map(function (val, idx) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "spacex-card mr-4 p-3",
+      className: "spacex-card p-3",
       key: idx
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       src: val && val.links && val.links.mission_patch,
@@ -36433,7 +36434,7 @@ var MissionCards = function MissionCards(props) {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "mission-name pt-1"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, val.mission_name, "  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "  #", val.flight_number)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "mission-ids pt-3 pb-1"
+      className: "mission-ids pt-1 pb-1"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "mission-label"
     }, "Mission Ids:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
